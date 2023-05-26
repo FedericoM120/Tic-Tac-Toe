@@ -9,6 +9,11 @@ class GameBoard
     @board.each do |r|
       puts r.join(' ')
     end
-    binding.pry
+  end
+
+  def update_board(player_choice)
+    if player_choice == 1
+      @board[0][0] = x
+    end
   end
 end
