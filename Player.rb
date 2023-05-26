@@ -3,4 +3,4 @@ class Player
       @name = name
       @icon = icon
     end
-  end
+end
