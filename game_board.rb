@@ -1,8 +1,10 @@
-require 'pry-byebug'
-
+require_relative 'player'
 class GameBoard
+  attr_accessor :board
+
   def initialize
-    @board = Array.new(3, ' ') { Array.new(3, 'x') }
+    e = 0
+    @board = Array.new(3) { Array.new(3) { e += 1 } }
   end
 
   def make_board
@@ -11,8 +13,8 @@ class GameBoard
     end
   end
 
-  def update_board(player_choice)
-    case player_one_choice
+  def update_board_p1(player_choice)
+    case player_choice
     when '1'
       @board[0][0] = 'x'
     when '2'
@@ -33,30 +35,27 @@ class GameBoard
       @board[2][2] = 'x'
     end
   end
-  def choice
-    j = 0
-    while j < 10
-      i = 2
-      if i % 2 == 0
-        player_one_choice = gets.chomp
-        ticBoard.update_board_p1(player_one_choice)
-        ticBoard.make_board
-        i += 1
-        j += 1
-      else
-        player_two_choice = gets.chomp
-        ticBoard.update_board_p2(player_two_choice)
-        ticBoard.make_board
-        i += 1
-        j += 1
-      end
+
+  def update_board_p2(player_choice)
+    case player_choice
+    when '1'
+      @board[0][0] = 'o'
+    when '2'
+      @board[0][1] = 'o'
+    when '3'
+      @board[0][2] = 'o'
+    when '4'
+      @board[1][0] = 'o'
+    when '5'
+      @board[1][1] = 'o'
+    when '6'
+      @board[1][2] = 'o'
+    when '7'
+      @board[2][0] = 'o'
+    when '8'
+      @board[2][1] = 'o'
+    when '9'
+      @board[2][2] = 'o'
     end
   end
-  player_one_choice = gets.chomp
-  ticBoard.update_board_p1(player_one_choice)
-  ticBoard.make_board
-  
-  player_two_choice = gets.chomp
-  ticBoard.update_board_p2(player_two_choice)
-  ticBoard.make_board
 end

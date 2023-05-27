@@ -20,8 +20,8 @@ def choice
   tic_board = GameBoard.new
   tic_board.make_board
   j = 1
+  i = 2
   while j < 10
-    i = 2
     if i.even?
       puts 'player one choice'
       player_one_choice = gets.chomp
