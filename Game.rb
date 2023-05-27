@@ -14,9 +14,33 @@ player_two_icon = gets.chomp
 player_two = Player.new(player_two_name, player_two_icon)
 
 puts 'player one choose a spot on the board by entering a available number space 1 - 9'
-ticBoard = GameBoard.new()
-ticBoard.make_board()
+
 # player now makes a choice and the choice is displayed on the screen
-player_one_choice = gets.chomp
-ticBoard.update_board(player_one_choice)
-ticBoard.make_board
+def choice
+  tic_board = GameBoard.new
+  tic_board.make_board
+  j = 1
+  while j < 10
+    i = 2
+    if i.even?
+      puts 'player one choice'
+      player_one_choice = gets.chomp
+      tic_board.update_board_p1(player_one_choice)
+      tic_board.make_board
+      i += 1
+      j += 1
+      puts i
+      puts j
+    elsif i.odd?
+      puts 'player two choice'
+      player_two_choice = gets.chomp
+      tic_board.update_board_p2(player_two_choice)
+      tic_board.make_board
+      i += 1
+      j += 1
+    end
+  end
+end
+
+choice
+    
