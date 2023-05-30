@@ -25,6 +25,8 @@ def choice
     if i.even?
       puts 'player one choice'
       player_one_choice = gets.chomp
+      #check if choice is taken
+      #if choice is taken ask for a new choice
       tic_board.update_board_p1(player_one_choice)
       tic_board.make_board
       i += 1
@@ -41,6 +43,3 @@ def choice
     end
   end
 end
-
-choice
-    

@@ -58,4 +58,28 @@ class GameBoard
       @board[2][2] = 'o'
     end
   end
+
+  def choice_taken(player_choice)
+    case player_choice
+    when '1'
+      if @board[0][0] == 'o' || @board[0][0] == 'x'
+        puts "this spot is taken"
+    when '2'
+      @board[0][1] = 'o'
+    when '3'
+      @board[0][2] = 'o'
+    when '4'
+      @board[1][0] = 'o'
+    when '5'
+      @board[1][1] = 'o'
+    when '6'
+      @board[1][2] = 'o'
+    when '7'
+      @board[2][0] = 'o'
+    when '8'
+      @board[2][1] = 'o'
+    when '9'
+      @board[2][2] = 'o'
+    end
+  end
 end
