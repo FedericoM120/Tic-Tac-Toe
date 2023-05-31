@@ -23,10 +23,9 @@ def choice
   i = 2
   while j < 10
     if i.even?
-      puts 'player one choice'
+      puts "#{player_one_name}'s turn"
       player_one_choice = gets.chomp
-      #check if choice is taken
-      #if choice is taken ask for a new choice
+      tic_board.choice_taken(player_one_choice);
       tic_board.update_board_p1(player_one_choice)
       tic_board.make_board
       i += 1
