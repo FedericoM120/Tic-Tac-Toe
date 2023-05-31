@@ -60,23 +60,90 @@ class GameBoard
     end
   end
 
-  def choice_taken(player_choice)
-    choice_is_taken = true;
-    while (choice_is_taken)
+   def choice_taken(player_choice)
       case player_choice
       when '1'
         if @board[0][0] == 'o' || @board[0][0] == 'x'
           puts "spot 1 taken"
+          return false
+        else
+          return true
         end
       when '2'
         if @board[0][1] == 'o' || @board[0][1] == 'x'
-          puts "spot 1 taken"
+          puts "spot 2 taken"
+          return false
+        else
+          return true
         end
-      else
-        choice_is_taken = false
+      when '3'
+        if @board[0][2] == 'o' || @board[0][2] == 'x'
+          puts "spot 2 taken"
+          return false
+        else
+          return true
+        end
+      when '4'
+        if @board[1][0] == 'o' || @board[1][0] == 'x'
+          puts "spot 2 taken"
+          return false
+        else
+          return true
+        end
+      when '5'
+        if @board[1][1] == 'o' || @board[1][1] == 'x'
+          puts "spot 2 taken"
+          return false
+        else
+          return true
+        end
+      when '6'
+        if @board[1][2] == 'o' || @board[1][2] == 'x'
+          puts "spot 2 taken"
+          return false
+        else
+          return true
+        end
+      when '7'
+        if @board[2][0] == 'o' || @board[2][0] == 'x'
+          puts "spot 2 taken"
+          return false
+        else
+          return true
+        end
+      when '8'
+        if @board[2][1] == 'o' || @board[2][1] == 'x'
+          puts "spot 2 taken"
+          return false
+        else
+          return true
+        end
+      when '9'
+        if @board[2][2] == 'o' || @board[2][2] == 'x'
+          puts "spot 2 taken"
+          return false
+        else
+          return true
+        end
       end
-      binding.pry
     end
-  end
 
+    def winner_declared
+      if (@board[0][0] == 'x'&& @board[0][1] == 'x' && @board[0][2] == 'x') || (@board[0][0] == 'o'&& @board[0][1] == 'o' && @board[0][2] == 'o')
+        return true
+      elsif (@board[1][0] == 'x'&& @board[1][1] == 'x' && @board[1][2] == 'x') || (@board[1][0] == 'o'&& @board[1][1] == 'o' && @board[1][2] == 'o')
+        return true
+      elsif (@board[2][0] == 'x'&& @board[2][1] == 'x' && @board[2][2] == 'x') || (@board[2][0] == 'o'&& @board[2][1] == 'o' && @board[2][2] == 'o')
+        return true
+      elsif (@board[0][0] == 'x' && @board[1][0] == 'x' && @board[2][0] == 'x') || (@board[0][0] == 'o' && @board[1][0] == 'o' && @board[2][0] == 'o')
+        return true
+      elsif (@board[0][1] == 'x' && @board[1][1] == 'x' && @board[2][1] == 'x') || (@board[0][1] == 'o' && @board[1][1] == 'o' && @board[2][1] == 'o')
+        return true
+      elsif (@board[0][2] == 'x' && @board[1][2] == 'x' && @board[2][2] == 'x') || (@board[0][2] == 'o' && @board[1][2] == 'o' && @board[2][2] == 'o')
+        return true
+      elsif (@board[0][0] == 'x' && @board[1][1] == 'x' && @board[2][2] == 'x') || (@board[0][0] == 'o' && @board[1][1] == 'o' && @board[2][2] == 'o')
+        return true
+      elseif (@board[0][2] == 'x' && @board[1][1] == 'x' && @board[2][0] == 'x') || (@board[0][2] == 'o' && @board[1][1] == 'o' && @board[2][0] == 'o')
+      return true
+    end
 end
