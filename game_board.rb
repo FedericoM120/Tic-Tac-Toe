@@ -143,7 +143,10 @@ class GameBoard
         return true
       elsif (@board[0][0] == 'x' && @board[1][1] == 'x' && @board[2][2] == 'x') || (@board[0][0] == 'o' && @board[1][1] == 'o' && @board[2][2] == 'o')
         return true
-      elseif (@board[0][2] == 'x' && @board[1][1] == 'x' && @board[2][0] == 'x') || (@board[0][2] == 'o' && @board[1][1] == 'o' && @board[2][0] == 'o')
-      return true
+      elsif (@board[0][2] == 'x' && @board[1][1] == 'x' && @board[2][0] == 'x') || (@board[0][2] == 'o' && @board[1][1] == 'o' && @board[2][0] == 'o')
+        return true
+      else
+        return false
+      end
     end
 end
